@@ -22,9 +22,11 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center p-3 max-w-6xl mx-auto">
 
-      <h1 className="text-lg md:text-xl font-semibold">
-        Abogado {CONTACT.name}
-      </h1>
+      <Link href="/">
+        <h1 className="text-lg md:text-xl font-semibold cursor-pointer hover:underline">
+          Abogado {CONTACT.name}
+        </h1>
+      </Link>
 
       <div className="flex items-center gap-4 md:gap-12">
 
