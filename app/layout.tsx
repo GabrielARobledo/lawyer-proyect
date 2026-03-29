@@ -1,9 +1,10 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsappButton from "@/components/WhatsappButton";
+import Footer from "@/components/Footer"; // ✅ Importa Footer
 import { CONTACT, getWhatsappUrl } from "@/lib/info";
 import ContactSection from "@/components/ContactSection";
-import Head from "next/head"; // ✅ Importa Head
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -18,13 +19,14 @@ export default function RootLayout({
       </Head>
       <body className="bg-gray-900 text-white">
         <Navbar />
-        {children}
+        <main className="flex-grow">{children}</main>
         <WhatsappButton />
         <ContactSection
           ctaTitle={CONTACT.ctaTitle}
           ctaSubtitle={CONTACT.ctaSubtitle}
           getWhatsappUrl={getWhatsappUrl}
         />
+        <Footer />
       </body>
     </html>
   );
