@@ -1,4 +1,3 @@
-// /lib/email.ts
 export const EMAIL = {
   defaultSubject: "Consulta recibida desde la web",
   to: "gaby-2011@hotmail.com.ar",
@@ -6,11 +5,7 @@ export const EMAIL = {
 };
 
 /**
- * Genera el contenido HTML de un email de contacto
- * @param name Nombre de quien envía la consulta
- * @param email Email de quien envía la consulta
- * @param message Mensaje/consulta
- * @returns htmlContent listo para usar en sendMail
+ * Genera el contenido HTML de un email de contacto.
  */
 export function buildContactEmailBody(name: string, email: string, message: string) {
   const now = new Date();

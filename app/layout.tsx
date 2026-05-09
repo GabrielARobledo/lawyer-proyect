@@ -1,31 +1,24 @@
+import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import WhatsappButton from "@/components/WhatsappButton";
-import Footer from "@/components/Footer"; // ✅ Importa Footer
-import { CONTACT, getWhatsappUrl } from "@/lib/info";
-import ContactSection from "@/components/ContactSection";
-import Head from "next/head";
+
+export const metadata: Metadata = {
+  title: "Gustavo Robledo | Abogado",
+  description:
+    "Asesoramiento legal profesional en derecho laboral, civil y consultoría legal.",
+};
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="es">
-      <Head>
-        <title>Mi Proyecto - Abogado</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <body className="bg-gray-900 text-white">
+      <body>
         <Navbar />
-        <main className="flex-grow">{children}</main>
-        <WhatsappButton />
-        <ContactSection
-          ctaTitle={CONTACT.ctaTitle}
-          ctaSubtitle={CONTACT.ctaSubtitle}
-          getWhatsappUrl={getWhatsappUrl}
-        />
+        {children}
         <Footer />
       </body>
     </html>
